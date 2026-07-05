@@ -640,7 +640,7 @@ section:not(.hero):not(.page-hero):not(.about-hero) {
 .availability-band {
   background:
     linear-gradient(135deg, rgba(7, 18, 12, 0.98), rgba(22, 53, 31, 0.96)),
-    url("../images/poultry/laying hens.PNG");
+    url("../images/poultry/laying hens.png?v=20260705120303");
   background-position: center;
   background-size: cover;
   color: var(--white);
