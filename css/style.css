@@ -817,6 +817,19 @@ section:not(.hero):not(.page-hero):not(.about-hero) {
   width: 100%;
 }
 
+.about-story-image {
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.about-story-image img {
+  aspect-ratio: auto;
+  background: var(--white);
+  height: auto;
+  object-fit: contain;
+}
+
 .product-image::after,
 .about-story-image::after,
 .mission-image::after,
@@ -879,11 +892,24 @@ section:not(.hero):not(.page-hero):not(.about-hero) {
 }
 
 .gallery-card {
+  display: flex;
+  flex-direction: column;
   padding: 12px;
 }
 
 .gallery-card h3 {
-  padding: 14px 10px 8px;
+  background: var(--white);
+  margin: 0;
+  padding: 16px 10px 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.gallery-card img {
+  flex: 0 0 auto;
+  height: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .product-tag {
@@ -925,15 +951,38 @@ section:not(.hero):not(.page-hero):not(.about-hero) {
 }
 
 .gallery-category {
+  background: var(--paper);
   color: var(--forest);
-  font-size: 28px;
+  display: block;
+  font-size: clamp(26px, 3.2vw, 38px);
   font-weight: 900;
-  margin: 56px auto 24px;
+  line-height: 1.08;
+  margin: 82px auto 28px;
   max-width: 1180px;
+  padding-top: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.gallery-category:first-of-type {
+  margin-top: 48px;
+}
+
+.gallery-category::before {
+  background: var(--gold);
+  border-radius: 999px;
+  content: "";
+  display: block;
+  height: 4px;
+  margin-bottom: 14px;
+  width: 72px;
 }
 
 .gallery-grid {
   grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
 }
 
 .faq-list {
@@ -1173,6 +1222,20 @@ footer p {
   .contact-cards,
   .gallery-grid {
     grid-template-columns: 1fr;
+  }
+
+  .gallery-category {
+    margin-top: 76px;
+    margin-bottom: 24px;
+    padding-inline: 14px;
+  }
+
+  .gallery-category:first-of-type {
+    margin-top: 38px;
+  }
+
+  .gallery-grid {
+    gap: 26px;
   }
 
   .hero h1,
